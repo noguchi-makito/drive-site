@@ -1,12 +1,10 @@
 <template>
   <div class="hello">
-    <div class="title">{{ msg }}</div>
-    <LoginButton v-on:click='onClick'/>
+    <button>ログイン</button>
   </div>
 </template>
 
 <script>
-import LoginButton from './LoginButton'
 export default {
   name: 'HelloWorld',
   date() {
@@ -14,8 +12,10 @@ export default {
       msg: 'welcome to your vue.js App'
     }
   },
-  components: {
-    LoginButton
+  methods: {
+    onClick:function() {
+      alert('ログインします。')
+    }
   }
 }
 </script>
