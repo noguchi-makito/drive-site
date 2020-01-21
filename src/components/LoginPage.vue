@@ -6,12 +6,12 @@
 
 
 <script>
-import LoginParts from './LoginParts'
+import LoginParts from './LoginParts'//componentsの読み込み
 export default {
   name: 'LoginPage',
   components: {
     LoginParts
-  }
+  }//読み込むvueファイルの名前
 }
 
 </script>

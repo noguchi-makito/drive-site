@@ -1,22 +1,20 @@
 <template>
-  <div class="hello">
-    <div class="title">{{ msg }}</div>
-    <LoginButton v-on:click='onClick'/>
+  <div>
+    <child :message="messge"></child>
   </div>
 </template>
 
 <script>
-import LoginButton from './LoginButton'
+import Child from './child.vue'//componentsの読み込み
 export default {
-  name: 'HelloWorld',
-  date() {
-    return {
-      msg: 'welcome to your vue.js App'
-    }
-  },
   components: {
-    LoginButton
-  }
+    Child
+  },//読みこむvueファイル名
+  data() {
+    return {
+      messge: 'Hello Vue'
+    }
+  }//変数を渡す
 }
 </script>
 

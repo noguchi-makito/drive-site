@@ -1,23 +1,16 @@
 <template>
-  <div class="hello">
-    <button>ログイン</button>
+  <div>
+    <form>
+      <input type="text" id="input_mes" value="">
+      <p>{{ message }}</p>
+    </form>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  date() {
-    return {
-      msg: 'welcome to your vue.js App'
-    }
-  },
-  methods: {
-    onClick:function() {
-      alert('ログインします。')
-    }
+  export default {
+    props: ['message']
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
