@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="error">{{error}}</p>
-    <textarea placeholder="add multiple lines"></textarea>
+    <textarea placeholder="感想を入力"></textarea>
   </div>
 </template>
 

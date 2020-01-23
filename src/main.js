@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 
 /* vue-routerの追加 */
-import router from './router'
+import router from './router.js'
 
 /*vuexの追加 */
-import store from './store'
+import store from './store.js'
 
 /* font awesomeの読み込み */
 import { library } from '@fortawesome/fontawesome-svg-core'
