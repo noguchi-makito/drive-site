@@ -1,5 +1,5 @@
 <template>
-  <div class="column_1">
+  <div class="column_1 kansou">
     <p>Formページ</p>
     <child></child>
     <child2></child2>
@@ -13,7 +13,7 @@ import child from "./parts/child";//componentパス
 import child2 from "./parts/child2";
 import EditForm from "./parts/EditForm";
 export default {
-  
+
   components: {
     child,
     child2,
