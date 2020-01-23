@@ -48,27 +48,30 @@
       height: 90%;
       letter-spacing: 10px;
       color: $MAINCOLOR;
+      font-size: 16px;
+      letter-spacing: 1px;
     }
   }
 
   .login__button {
+    margin: 0 auto 40px;
+    max-width: 584px;
+    width: 60%;
+    background: $MAINCOLOR;
+    box-shadow: 0 4px 0 darken($MAINCOLOR, 15%);
+    border-radius: 5px;
 
-    button {
-      border-radius: 5px;
+    &:hover {
+      @include btn_hover;
+    }
+
+    .button {
       font-size: 24px;
       font-weight: bold;
-      height: 60px;
-      margin: 0 auto 40px;
-      max-width: 584px;
-      width: 60%;
-      border: none;
-      background: $MAINCOLOR;
       color: $WHITECOLOR;
-      box-shadow: 0 4px 0 darken($MAINCOLOR, 15%);
-
-      &:hover {
-        @include btn_hover;
-      }
+      text-decoration: none;
+      display: block;
+      padding: 20px;
     }
   }
 }

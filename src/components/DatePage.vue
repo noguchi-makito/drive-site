@@ -25,40 +25,40 @@
       <!-- /モーダルウィンドウ -->
       <ul class="content__date">
         <li class="content__date__list">
-          <img src="../assets/test.jpg" alt="保存画像1" />
+          <img src="../assets/img/test.jpg" alt="保存画像1" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test2.jpg" alt="保存画像2" />
+          <img src="../assets/img/test2.jpg" alt="保存画像2" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test.jpg" alt="保存画像3" />
+          <img src="../assets/img/test.jpg" alt="保存画像3" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test2.jpg" alt="保存画像4" />
+          <img src="../assets/img/test2.jpg" alt="保存画像4" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test.jpg" alt="保存画像5" />
+          <img src="../assets/img/test.jpg" alt="保存画像5" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test2.jpg" alt="保存画像6" />
+          <img src="../assets/img/test2.jpg" alt="保存画像6" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test.jpg" alt="保存画像7" />
+          <img src="../assets/img/test.jpg" alt="保存画像7" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test2.jpg" alt="保存画像8" />
+          <img src="../assets/img/test2.jpg" alt="保存画像8" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test.jpg" alt="保存画像9" />
+          <img src="../assets/img/test.jpg" alt="保存画像9" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test2.jpg" alt=保存画像10 />
+          <img src="../assets/img/test2.jpg" alt="保存画像10" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test.jpg" alt="保存画像11" />
+          <img src="../assets/img/test.jpg" alt="保存画像11" />
         </li>
         <li class="content__date__list">
-          <img src="../assets/test2.jpg" alt="保存画像12" />
+          <img src="../assets/img/test2.jpg" alt="保存画像12" />
         </li>
       </ul>
     </div>

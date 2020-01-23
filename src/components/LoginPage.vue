@@ -1,19 +1,18 @@
 <template>
-  <div class="column_1">
-    <LoginParts />
+  <div>
+    <div class="column_1">
+      <login></login>
+    </div>
   </div>
 </template>
 
-
 <script>
-import LoginParts from './LoginParts'//componentsの読み込み
+import login from "./parts/login.vue";//componentパス
 export default {
-  name: 'LoginPage',
   components: {
-    LoginParts
-  }//読み込むvueファイルの名前
+    login
+  },//componentのファイル名
 }
-
 </script>
 
 <style>

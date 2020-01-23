@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import LoginPage from '@/components/LoginPage'
 import DatePage from '@/components/DatePage'
 import HelloWorld from '@/components/HelloWorld'
+import FormPage from '@/components/FormPage'
 
 
 Vue.use(Router)
@@ -23,6 +24,10 @@ export default new Router({
     {
       path: '/hellow',
       component: HelloWorld
+    },
+    {
+      path: '/form',
+      component: FormPage
     }
 
   ]
