@@ -5,13 +5,17 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    message: '初期メッセージ'
+    message: '初期メッセージ',
+    kansou : "初期の感想"
   },
 
   getters:{
     //messageを使用するgetter
     message(state) {
       return state.message
+    },
+    kansou(state) {
+      return state.kansou
     }
   },
 
@@ -20,12 +24,18 @@ const store = new Vuex.Store({
   mutations: {
     setMessage(state,payload){
       state.message = payload.message
+    },
+    setKansou(state,playload){
+      state.kansou = playload.kansou
     }
   },
 
   actions: {
     doUpdate({commit}, message){
       commit('setMessage',{message})
+    },
+    inputKansou({commit}, kansou){
+      commit("setKansou",{kansou})
     }
   }
 })
