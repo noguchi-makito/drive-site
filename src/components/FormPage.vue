@@ -4,7 +4,7 @@
     <child></child>
     <child2></child2>
     <child3></child3>
-    <button v-on:click="buttonAction">{{button}}</button>
+    <button>{{button}}</button>
   </div>
 </template>
 
