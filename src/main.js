@@ -4,6 +4,9 @@ import App from './App.vue'
 /* vue-routerの追加 */
 import router from './router'
 
+/*vuexの追加 */
+import store from './store'
+
 /* font awesomeの読み込み */
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -20,5 +23,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
