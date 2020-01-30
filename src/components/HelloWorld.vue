@@ -19,15 +19,28 @@
           </div>
       </div>
     </div>
+    <p>{{ timestamp }}</p>
   </div>
 </template>
 
 <script>
   export default {
+    created() {
+      this.getNow();
+    },
     data() {
       return {
-        activetab: 1
+        activetab: 1,
+        timestamp:'',
       }
+    },
+    methods: {
+      getNow: function() {
+          const today = new Date();
+          const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+          const dateTime = time;
+          this.timestamp = dateTime;
+      },
     }
   }
 </script>
