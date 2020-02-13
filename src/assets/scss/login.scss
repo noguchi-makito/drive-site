@@ -4,7 +4,6 @@
 //mixinファイルの読み込み
 @import "mixin";
 
-
 .login {
   width: 60%;
   margin: 0 auto;
@@ -19,10 +18,10 @@
     img {
       width: 40%;
     }
-
   }
 
-  &__password {
+  &__password,
+  &__email {
     border-radius: 5px;
     box-shadow: 0 1px 6px 0 $BOXSHDOW;
     font-size: 24px;
@@ -39,7 +38,6 @@
       font-size: 30px;
       margin: 0 10px;
       color: $MAINCOLOR;
-
     }
 
     input {
@@ -52,26 +50,22 @@
       letter-spacing: 1px;
     }
   }
+}
 
-  .login__button {
-    margin: 0 auto 40px;
-    max-width: 584px;
-    width: 60%;
-    background: $MAINCOLOR;
-    box-shadow: 0 4px 0 darken($MAINCOLOR, 15%);
-    border-radius: 5px;
+.button {
+  font-size: 24px;
+  font-weight: bold;
+  color: $WHITECOLOR;
+  text-decoration: none;
+  padding: 20px;
+  background: $MAINCOLOR;
+  box-shadow: 0 4px 0 darken($MAINCOLOR, 15%);
+  border: none;
+  border-radius: 5px;
+  max-width: 584px;
+  width: 25%;
 
-    &:hover {
-      @include btn_hover;
-    }
-
-    .button {
-      font-size: 24px;
-      font-weight: bold;
-      color: $WHITECOLOR;
-      text-decoration: none;
-      display: block;
-      padding: 20px;
-    }
+  &:hover {
+    @include btn_hover;
   }
 }
