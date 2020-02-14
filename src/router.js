@@ -1,34 +1,45 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
 // page
-import LoginPage from '@/components/LoginPage'
-import DatePage from '@/components/DatePage'
-import HelloWorld from '@/components/HelloWorld'
-import FormPage from '@/components/FormPage'
+import LoginPage from "@/components/LoginPage";
+import DatePage from "@/components/DatePage";
+import HelloWorld from "@/components/HelloWorld";
+import FormPage from "@/components/FormPage";
+import NotFound from "@/components/NotFound";
 
-
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   routes: [
     {
-      path: '/',
+      path: "/",
       component: LoginPage
     },
     {
-      path: '/date',
+      path: "/login",
+      name: "Login",
+      query: { next: "" },
+      component: LoginPage
+    },
+    {
+      path: "/date",
+      name: "DatePage",
+      query: { auth: "" },
       component: DatePage
     },
     {
-      path: '/hellow',
+      path: "/hellow",
       component: HelloWorld
     },
     {
-      path: '/form',
+      path: "/form",
       component: FormPage
+    },
+    {
+      path: "*",
+      component: NotFound
     }
-
   ]
-})
+});

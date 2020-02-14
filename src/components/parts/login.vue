@@ -8,16 +8,16 @@
         <span class="login__email--icon">
           <font-awesome-icon icon="envelope" />
         </span>
-        <input type="text" v-model="email" placeholder="アドレスを入力してください" />
+        <input type="text" v-model="email" id="email" placeholder="アドレスを入力してください" />
       </li>
       <li class="login__password">
         <span class="login__password--icon">
           <font-awesome-icon icon="lock" />
         </span>
-        <input type="password" v-model="password" placeholder="PASSWORDを入力してください。" />
+        <input type="password" v-model="password" id="password" placeholder="PASSWORDを入力してください。" />
       </li>
     </ul>
-    <button type="button" class="button" @click="login()">Login</button>
+    <button type="button" class="button" @click="login">Login</button>
   </div>
 </template>
 
@@ -33,9 +33,24 @@ export default {
   },
   methods: {
     login: function() {
-      alert(
-        "パスワードは" + this.password + "\n" + "メールアドレスは" + this.email
-      );
+      let nextPage = this.$route.query.next;
+      if (nextPage === undefined) {
+        nextPage = "DatePage";
+      }
+
+      //メールアドレスとパスワードを設定
+      let correctLoginEmail = "admin";
+      let correctPassword = "password";
+
+      let myEmail = document.getElementById("email").value;
+      let myLoginPass = document.getElementById("password").value;
+
+      if (myEmail === correctLoginEmail && myLoginPass === correctPassword) {
+        // document.getElementById('loginResult').innerHTML = 'Login Success !'
+        this.$router.push({ name: nextPage, query: { auth: "authenticated" } });
+      } else {
+        alert("メールアドレスかパスワードが違っています。");
+      }
     }
   }
 };

@@ -50,6 +50,14 @@
 import sidebar from "./parts/sidebar";
 export default {
   name: "DatePage",
+  beforeMount: function() {
+    if (this.$route.query.auth !== "authenticated") {
+      this.$router.push({
+        name: "Login",
+        query: { next: "DatePage" }
+      });
+    }
+  },
   data() {
     return {};
   },
