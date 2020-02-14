@@ -42,13 +42,16 @@ export default {
       let correctLoginEmail = "admin";
       let correctPassword = "password";
 
+      //テキストボックスの値を変数に
       let myEmail = document.getElementById("email").value;
       let myLoginPass = document.getElementById("password").value;
 
+      //テキストボックスの値が設定したメアドとパスワードと同じだった場合/dateに飛ばす。
       if (myEmail === correctLoginEmail && myLoginPass === correctPassword) {
-        // document.getElementById('loginResult').innerHTML = 'Login Success !'
         this.$router.push({ name: nextPage, query: { auth: "authenticated" } });
-      } else {
+      }
+      //違った場合アラート
+      else {
         alert("メールアドレスかパスワードが違っています。");
       }
     }
