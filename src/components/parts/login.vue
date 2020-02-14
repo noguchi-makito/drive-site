@@ -32,6 +32,7 @@ export default {
     };
   },
   methods: {
+    //ログインボタンをクリックしたときの処理
     login: function() {
       let nextPage = this.$route.query.next;
       if (nextPage === undefined) {
