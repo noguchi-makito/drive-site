@@ -11,15 +11,19 @@
       </div>
     </div>
     <button type="button" v-on:click="link">リンク</button>
+
+    <hellow v-bind:name="name" @nameWasReset="name= $event"></hellow>
   </div>
 </template>
 
 <script>
+import hellow from "./parts/hellow";
 export default {
   data() {
     return {
       checked: false,
-      isChecked: false
+      isChecked: false,
+      name: "KEI"
     };
   },
 
@@ -38,6 +42,9 @@ export default {
     iconType: function() {
       return this.isChecked ? "openIcon" : "closeIcon";
     }
+  },
+  components: {
+    hellow
   }
 };
 </script>
