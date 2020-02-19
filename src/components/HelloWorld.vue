@@ -1,71 +1,42 @@
 <template>
   <div>
-    <h2>タブ</h2>
-    <div id="tabs" class="container">
-      <div class="tabs">
-        <a
-          v-on:click="activetab = 1"
-          v-bind:class="[activetab === 1 ? 'active' : '']"
-          >タブ01</a
-        >
-        <a
-          v-on:click="activetab = 2"
-          v-bind:class="[activetab === 2 ? 'active' : '']"
-          >タブ02</a
-        >
-        <a
-          v-on:click="activetab = 3"
-          v-bind:class="[activetab === 3 ? 'active' : '']"
-          >タブ03</a
-        >
-      </div>
-      <div class="content">
-        <div v-show="activetab === 1" class="tabcontent">コンテンツ01</div>
-        <div v-show="activetab === 2" class="tabcontent">コンテンツ02</div>
-        <div v-show="activetab === 3" class="tabcontent">コンテンツ03</div>
+    <div>
+      <input type="checkbox" id="checkbox" v-model="checked" />
+      <p>{{checked}}</p>
+      <input type="text" v-if="checked" />
+      <input type="text" v-else disabled="disabled" />
+      <div class="password_box">
+        <input v-bind:type="inputType" id="password" class="input" />
+        <span v-on:click="onClick" v-bind:class="iconType"></span>
       </div>
     </div>
-    <p>{{ timestamp }}</p>
-
-    <button v-on:click="openModal">click</button>
-    <showmodal v-show="showContent" v-on:from-child="closeModal"
-      >slotからモーダルウィンドウへ</showmodal
-    >
-
-    <h3 class="vue-title">Simple</h3>
+    <button type="button" v-on:click="link">リンク</button>
   </div>
 </template>
 
 <script>
-import showmodal from "./parts/showmodal.vue"; //componentパス
 export default {
-  components: {
-    showmodal
-  }, //componentのファイル名
-  created() {
-    this.getNow();
-  },
   data() {
     return {
-      activetab: 1,
-      timestamp: "",
-      showContent: false,
-      aaa: false
+      checked: false,
+      isChecked: false
     };
   },
+
   methods: {
-    getNow: function() {
-      const today = new Date();
-      const time =
-        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-      const dateTime = time;
-      this.timestamp = dateTime;
+    onClick: function() {
+      this.isChecked = !this.isChecked;
     },
-    openModal: function() {
-      this.showContent = true;
+    link: function() {
+      this.$router.push({ path: "/form" });
+    }
+  },
+  computed: {
+    inputType: function() {
+      return this.isChecked ? "text" : "password";
     },
-    closeModal: function() {
-      this.showContent = false;
+    iconType: function() {
+      return this.isChecked ? "openIcon" : "closeIcon";
     }
   }
 };
@@ -92,5 +63,38 @@ p.text {
 }
 .active {
   background: #ccc;
+}
+.password_box {
+  position: relative;
+  width: 20%;
+  margin: 0 auto;
+}
+.closeIcon,
+.openIcon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  line-height: 1.5;
+  font-size: 16px;
+  cursor: pointer;
+}
+.password {
+  width: 100%;
+}
+
+.closeIcon::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f070";
+}
+
+.openIcon::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f06e";
+}
+
+.password_box input {
+  width: 100%;
 }
 </style>
