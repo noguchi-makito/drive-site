@@ -17,13 +17,15 @@
         <input type="password" v-model="password" id="password" placeholder="PASSWORDを入力してください。" />
       </li>
     </ul>
-    <button type="button" class="button" @click="login">Login</button>
+    <button type="button" class="button" @click="onlogin">Login</button>
   </div>
 </template>
 
 <script>
 /* ログインページcss読み込み */
 import "../../assets/scss/login.scss";
+import superagent from "superagent";
+import Router from "vue-router";
 export default {
   data() {
     return {
@@ -55,11 +57,27 @@ export default {
       else {
         alert("メールアドレスかパスワードが違っています。");
       }
+    },
+    //
+    onlogin: async function() {
+      const url =
+        "http://test-lb-1295246823.ap-northeast-1.elb.amazonaws.com:3000/v1/login/login-account";
+      try {
+        await superagent.post(url).send({
+          id: Number(this.email),
+          pass: Number(this.password)
+        });
+        const router = new Router({
+          routes: [{ path: "/date" }]
+        });
+        router.push("date");
+      } catch (error) {
+        alert(error);
+      }
     }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

@@ -20,13 +20,11 @@ export default new Router({
     {
       path: "/login",
       name: "Login",
-      query: { next: "" },
       component: LoginPage
     },
     {
       path: "/date",
       name: "DatePage",
-      query: { auth: "" },
       component: DatePage
     },
     {
