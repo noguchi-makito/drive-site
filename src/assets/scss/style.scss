@@ -1,11 +1,20 @@
+//リセットcssの読み込み
+@import "set/reset";
+
 //変数ファイルの読み込み
-@import "variables";
+@import "set/variables";
 
 //mixinファイルの読み込み
-@import "mixin";
+@import "set/mixin";
+
+//データページのcss
+@import "parts/date";
+
+//ログインページのcss
+@import "parts/login";
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

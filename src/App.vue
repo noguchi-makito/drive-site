@@ -8,6 +8,8 @@
 
 <script>
 import "normalize.css";
+/* style.css読み込み */
+import "./assets/scss/style.scss";
 export default {
   name: "App"
 };

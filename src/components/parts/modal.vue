@@ -1,6 +1,6 @@
 <template>
   <div id="overlay" v-show="showContent">
-    <div id="content">
+    <div id="modalContent">
       <p>これがモーダルウィンドウです。</p>
       <p><button v-on:click="clickEvent">close</button></p>
     </div>
