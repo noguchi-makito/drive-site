@@ -21,11 +21,16 @@
             <font-awesome-icon icon="lock" />
           </span>
           <input
-            type="password"
+            :type="inputType"
             v-model="password"
             id="password"
-            placeholder="PASSWORDを入力してください。"
+            placeholder="PASSWORDを入力してください"
           />
+          <span
+            class="login__password--switchIcon"
+            :class="iconType"
+            @click="switchIcon"
+          ></span>
         </li>
       </ul>
       <button type="button" class="button" @click="onLogin">Login</button>
@@ -42,7 +47,8 @@ export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      isChecked: false
     };
   },
   methods: {
@@ -70,7 +76,8 @@ export default {
     //     alert("メールアドレスかパスワードが違っています。");
     //   }
     // },
-    // //
+
+    //ログインの処理
     onLogin: async function() {
       const url =
         "http://test-lb-1295246823.ap-northeast-1.elb.amazonaws.com:3000/v1/login/login-account";
@@ -93,10 +100,23 @@ export default {
         alert("メールアドレスかパスワードが違っています。");
       }
     },
+    //テストボタン
     goDate() {
       this.$router.push({
         path: "date"
       });
+    },
+    switchIcon: function() {
+      this.isChecked = !this.isChecked;
+    }
+  },
+
+  computed: {
+    inputType: function() {
+      return this.isChecked ? "text" : "password";
+    },
+    iconType: function() {
+      return this.isChecked ? "eye" : "eye-slash";
     }
   }
 };

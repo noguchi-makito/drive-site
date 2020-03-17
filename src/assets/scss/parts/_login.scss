@@ -44,6 +44,26 @@
       letter-spacing: 1px;
     }
   }
+
+  &__password {
+    .eye {
+      &:after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f06e";
+      }
+    }
+    .eye-slash {
+      &:after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f070";
+      }
+    }
+    &--switchIcon {
+      font-size: 20px;
+      margin-right: 10px;
+      color: $MAINCOLOR;
+    }
+  }
 }
 
 .button {
