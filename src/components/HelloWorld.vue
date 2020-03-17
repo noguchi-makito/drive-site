@@ -1,8 +1,9 @@
 <template>
   <div>
+    <vueloading></vueloading>
     <div>
       <input type="checkbox" id="checkbox" v-model="checked" />
-      <p>{{checked}}</p>
+      <p>{{ checked }}</p>
       <input type="text" v-if="checked" />
       <input type="text" v-else disabled="disabled" />
       <div class="password_box">
@@ -12,12 +13,13 @@
     </div>
     <button type="button" v-on:click="link">リンク</button>
 
-    <hellow v-bind:name="name" @nameWasReset="name= $event"></hellow>
+    <hellow v-bind:name="name" @nameWasReset="name = $event"></hellow>
   </div>
 </template>
 
 <script>
 import hellow from "./parts/hellow";
+import vueloading from "./parts/vueloading";
 export default {
   data() {
     return {
@@ -44,7 +46,8 @@ export default {
     }
   },
   components: {
-    hellow
+    hellow,
+    vueloading
   }
 };
 </script>

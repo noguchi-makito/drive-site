@@ -13,7 +13,7 @@
     width: 20%;
     ul {
       list-style: none;
-      padding: 0
+      padding: 0;
     }
 
     &__menu__list {
@@ -37,7 +37,7 @@
   .content {
     width: 80%;
     position: relative;
-    ul {
+    &__date {
       list-style: none;
       display: flex;
       justify-content: left;
@@ -45,27 +45,42 @@
     }
 
     &__date__list {
-      background: #ccc;
-      box-shadow: 0 1px 6px 0 $BOXSHDOW;
-      height: 200px;
-      min-width: 200px;
-      border-radius: 3px;
-      transition: all .25s ease;
-      animation: populate .5s ease-out normal backwards;
-      margin: 5px;
-      overflow: hidden;
+      position: relative;
 
-      img {
-        width: 200px;
+      > .e-imgbox {
+        background: #ccc;
+        box-shadow: 0 1px 6px 0 $BOXSHDOW;
         height: 200px;
-        object-fit: cover;
-        display: block;
-	      transition-duration: 0.3s;
+        min-width: 200px;
+        border-radius: 3px;
+        transition: all 0.25s ease;
+        animation: populate 0.5s ease-out normal backwards;
+        margin: 5px;
+        overflow: hidden;
+        img {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+          display: block;
+          transition-duration: 0.3s;
 
-        &:hover {
-          transform: scale(1.1);
-	        transition-duration: 0.3s;
+          &:hover {
+            transform: scale(1.1);
+            transition-duration: 0.3s;
+          }
         }
+      }
+
+      &--icon {
+        top: 10px;
+        right: 10px;
+        display: none;
+        z-index: 99;
+      }
+
+      > .active {
+        display: block;
+        position: absolute;
       }
     }
     //モーダルウィンドウ
@@ -129,15 +144,13 @@
             max-width: 584px;
             width: 40%;
             border: none;
-            background: #6BBD0A;
-            color: #FFFFFF;
+            background: #6bbd0a;
+            color: #ffffff;
             -webkit-box-shadow: 0 4px 0 #427406;
             box-shadow: 0 4px 0 #427406;
           }
         }
-
       }
     }
   }
-
 }

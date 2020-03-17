@@ -5,11 +5,21 @@
 
     <div class="content">
       <ul class="content__date">
-        <li class="content__date__list">
-          <img src="../assets/img/test.jpg" alt="保存画像1" />
+        <li class="content__date__list" v-on:click="isClick=!isClick">
+          <span class="content__date__list--icon" v-bind:class="{active:isClick}">
+            <font-awesome-icon icon="envelope" />
+          </span>
+          <div class="e-imgbox">
+            <img src="../assets/img/test.jpg" alt="保存画像1" />
+          </div>
         </li>
-        <li class="content__date__list">
-          <img src="../assets/img/test2.jpg" alt="保存画像2" />
+        <li class="content__date__list" v-on:click="isClick2=!isClick2">
+          <span class="content__date__list--icon" v-bind:class="{active:isClick2}">
+            <font-awesome-icon icon="envelope" />
+          </span>
+          <div class="e-imgbox">
+            <img src="../assets/img/test2.jpg" alt="保存画像2" />
+          </div>
         </li>
         <li class="content__date__list">
           <img src="../assets/img/test.jpg" alt="保存画像3" />
@@ -59,7 +69,10 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      isClick: false,
+      isClick2: false
+    };
   },
   methods: {},
   components: {
