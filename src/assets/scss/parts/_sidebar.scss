@@ -1,0 +1,28 @@
+.sidebanner {
+  text-align: left;
+  width: 20%;
+  ul {
+    list-style: none;
+    padding: 0;
+    > .active {
+      background: lighten($MAINCOLOR, 50%);
+    }
+  }
+
+  &__menu__list {
+    font-size: 20px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &--icon {
+      font-size: 36px;
+      margin-right: 20px;
+      color: $MAINCOLOR;
+    }
+    &:hover {
+      background: lighten($MAINCOLOR, 50%);
+    }
+  }
+}

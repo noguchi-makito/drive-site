@@ -1,17 +1,23 @@
 <template>
   <div id="overlay" v-show="showContent">
     <div id="modalContent">
-      <p>これがモーダルウィンドウです。</p>
-      <p><button v-on:click="clickEvent">close</button></p>
+      <h2 class="title">NEW FOLDER</h2>
+      <p class="icon"><font-awesome-icon icon="folder" /></p>
+      <div class="input_area">
+        <input type="text" />
+        <button class="input_area__button1">OK</button>
+        <button class="input_area__button2" v-on:click="clickEvent">
+          CANCEL
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {};
-  },
+  data() {},
+
   methods: {
     clickEvent: function() {
       this.$emit("from-child");

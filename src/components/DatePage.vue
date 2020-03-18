@@ -105,6 +105,17 @@
           </div>
         </li>
       </ul>
+      <!-- テスト用のリスト -->
+      <ul class="add_list">
+        <li v-for="list in lists" :key="list" class="">
+          {{ list }}
+        </li>
+      </ul>
+      <div class="add_area">
+        <input type="text" id="addList" />
+        <input type="button" value="フォルダーを追加" @click="addList" />
+      </div>
+      <!-- /テスト用のリスト -->
     </div>
   </div>
 </template>
@@ -117,14 +128,35 @@ export default {
     return {
       isClick: false,
       isClick2: false,
-      isClick3: false
+      isClick3: false,
+      counter: 0,
+      lists: ["img1", "img2", "img3", "img4"]
     };
   },
-  methods: {},
+  methods: {
+    addList: function() {
+      let foldeName = document.getElementById("addList").value;
+      this.lists.push(foldeName);
+    }
+  },
   components: {
     sidebar
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.add_list {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  list-style: none;
+  flex-wrap: wrap;
+  > li {
+    height: 200px;
+    min-width: 200px;
+    border: solid 1px #ccc;
+    margin: 5px;
+  }
+}
+</style>

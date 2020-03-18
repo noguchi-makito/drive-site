@@ -13,6 +13,9 @@
 //ログインページのcss
 @import "parts/login";
 
+//モーダルウィンドウのcss読み込み
+@import "parts/modal";
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

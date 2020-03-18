@@ -1,7 +1,11 @@
 <template>
   <div class="sidebanner">
     <ul class="sidebanner__menu">
-      <li class="sidebanner__menu__list" v-on:click="openModal">
+      <li
+        class="sidebanner__menu__list"
+        v-on:click="openModal"
+        v-bind:class="{ active: isActive01 }"
+      >
         <span class="sidebanner__menu__list--icon">
           <font-awesome-icon icon="folder" /> </span
         >新規フォルダー
@@ -34,15 +38,18 @@ export default {
   name: "DatePage",
   data() {
     return {
-      showContent: false
+      showContent: false,
+      isActive01: false
     };
   },
   methods: {
     openModal: function() {
       this.showContent = true;
+      this.isActive01 = true;
     },
     closeModal: function() {
       this.showContent = false;
+      this.isActive01 = false;
     }
   },
   components: {
