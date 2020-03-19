@@ -5,23 +5,23 @@
 
     <div class="content">
       <!-- テスト用のリスト -->
-      <ul class="content__date">
-        <li
-          v-for="list in lists"
+      <viewer :images="images" class="content__date">
+        <div
+          v-for="list in images"
           :key="list.name"
           class="content__date__list"
-          @click="select=!select"
-          v-bind:class="{select:select}"
+          @click="select = !select"
+          v-bind:class="{ select: select }"
         >
           <span class="content__date__list--icon">
             <font-awesome-icon icon="envelope" />
           </span>
           <div class="imgbox">
-            <p class="name">{{list.name}}</p>
+            <p class="name">{{ list.name }}</p>
             <img :src="list.img" />
           </div>
-        </li>
-      </ul>
+        </div>
+      </viewer>
       <div class="add_area">
         <input type="text" id="addList" />
         <input type="button" value="フォルダーを追加" @click="addList" />
@@ -34,12 +34,16 @@
 
 <script>
 import sidebar from "./parts/sidebar";
+import "viewerjs/dist/viewer.css";
+import Viewer from "v-viewer";
+import Vue from "vue";
+Vue.use(Viewer);
 export default {
   name: "DatePage",
   data() {
     return {
       counter: 0,
-      lists: [
+      images: [
         { name: "img1", img: require("../assets/img/test.jpg") },
         { name: "img2", img: require("../assets/img/test2.jpg") },
         { name: "img3", img: require("../assets/img/test.jpg") }
@@ -53,14 +57,14 @@ export default {
       if (foldeName == "") {
         alert("フォルダー名を入力指定ください");
       } else {
-        this.lists.push({
+        this.images.push({
           name: foldeName,
           img: require("../assets/img/folder.png")
         });
       }
     },
     delet(index) {
-      this.lists.splice(index, 1);
+      this.images.splice(index, 1);
     }
   },
   components: {

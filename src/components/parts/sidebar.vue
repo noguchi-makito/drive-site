@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 #overlay {
   /* 要素を重ねた時の順番 */
   z-index: 1;

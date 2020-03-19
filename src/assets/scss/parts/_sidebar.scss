@@ -10,11 +10,27 @@
   }
 
   &__menu__list {
-    font-size: 20px;
-    padding: 20px;
+    padding: 10px;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s linear;
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      transition: 0.3s linear;
+    }
 
     &--icon {
       font-size: 36px;
@@ -22,7 +38,11 @@
       color: $MAINCOLOR;
     }
     &:hover {
-      background: lighten($MAINCOLOR, 50%);
+      color: $MAINCOLOR;
+      &::after {
+        left: 0;
+        background: lighten($MAINCOLOR, 50%);
+      }
     }
   }
 }
