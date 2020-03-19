@@ -6,7 +6,13 @@
     <div class="content">
       <!-- テスト用のリスト -->
       <ul class="content__date">
-        <li v-for="list in lists" :key="list" class="content__date__list">
+        <li
+          v-for="list in lists"
+          :key="list.name"
+          class="content__date__list"
+          @click="select=!select"
+          v-bind:class="{select:select}"
+        >
           <span class="content__date__list--icon">
             <font-awesome-icon icon="envelope" />
           </span>
@@ -19,6 +25,7 @@
       <div class="add_area">
         <input type="text" id="addList" />
         <input type="button" value="フォルダーを追加" @click="addList" />
+        <button @click="delet(index)">削除</button>
       </div>
       <!-- /テスト用のリスト -->
     </div>
@@ -33,19 +40,27 @@ export default {
     return {
       counter: 0,
       lists: [
-        { name: "", img: require("../assets/img/test.jpg") },
-        { name: "", img: require("../assets/img/test2.jpg") },
-        { name: "", img: require("../assets/img/test.jpg") }
-      ]
+        { name: "img1", img: require("../assets/img/test.jpg") },
+        { name: "img2", img: require("../assets/img/test2.jpg") },
+        { name: "img3", img: require("../assets/img/test.jpg") }
+      ],
+      select: false
     };
   },
   methods: {
-    addList: function() {
+    addList() {
       let foldeName = document.getElementById("addList").value;
-      this.lists.push({
-        name: foldeName,
-        img: require("../assets/img/folder.png")
-      });
+      if (foldeName == "") {
+        alert("フォルダー名を入力指定ください");
+      } else {
+        this.lists.push({
+          name: foldeName,
+          img: require("../assets/img/folder.png")
+        });
+      }
+    },
+    delet(index) {
+      this.lists.splice(index, 1);
     }
   },
   components: {
