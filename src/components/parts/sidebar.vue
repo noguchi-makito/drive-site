@@ -7,23 +7,23 @@
         v-bind:class="{ active: isActive01 }"
       >
         <span class="sidebanner__menu__list--icon">
-          <font-awesome-icon icon="folder" /> </span
-        >新規フォルダー
+          <font-awesome-icon icon="folder" />
+        </span>新規フォルダー
       </li>
       <li class="sidebanner__menu__list">
         <span class="sidebanner__menu__list--icon">
-          <font-awesome-icon icon="upload" /> </span
-        >アップロード
+          <font-awesome-icon icon="upload" />
+        </span>アップロード
       </li>
       <li class="sidebanner__menu__list">
         <span class="sidebanner__menu__list--icon">
-          <font-awesome-icon icon="download" /> </span
-        >ダウンロード
+          <font-awesome-icon icon="download" />
+        </span>ダウンロード
       </li>
       <li class="sidebanner__menu__list">
         <span class="sidebanner__menu__list--icon">
-          <font-awesome-icon icon="trash-alt" /> </span
-        >削除
+          <font-awesome-icon icon="trash-alt" />
+        </span>削除
       </li>
     </ul>
 

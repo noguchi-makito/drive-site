@@ -18,8 +18,8 @@
     &__date__list {
       position: relative;
 
-      > .e-imgbox {
-        background: #ccc;
+      > .imgbox {
+        background: #fff;
         box-shadow: 0 1px 6px 0 $BOXSHDOW;
         height: 200px;
         min-width: 200px;
@@ -28,7 +28,8 @@
         animation: populate 0.5s ease-out normal backwards;
         margin: 5px;
         overflow: hidden;
-        img {
+        position: relative;
+        > img {
           width: 200px;
           height: 200px;
           object-fit: cover;
@@ -39,6 +40,16 @@
             transform: scale(1.1);
             transition-duration: 0.3s;
           }
+        }
+
+        .name {
+          position: absolute;
+          font-size: 20px;
+          right: 0;
+          left: 0;
+          top: 20px;
+          text-align: center;
+          color: $MAINCOLOR;
         }
       }
 
