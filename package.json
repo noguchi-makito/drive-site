@@ -13,7 +13,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "core-js": "^3.4.3",
     "encoding-japanese": "^1.0.30",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "pug-plain-loader": "^1.0.0",
     "superagent": "^5.2.1",
     "tabulator-tables": "^4.5.3",
